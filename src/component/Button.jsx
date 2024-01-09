@@ -1,7 +1,8 @@
+import { useState } from "react";
 export default function Button(probs) {
   const { data } = probs;
+  const [item, setiD] = useState(0);
   let classBtn = "btn";
-  console.log(data);
   if (data == "AC" || data == "+/-" || data == "%") {
     classBtn = "btn gray-bg";
   }
@@ -11,5 +12,12 @@ export default function Button(probs) {
   if (data == "0") {
     classBtn = "btn lg";
   }
-  return <button className={classBtn}>{data}</button>;
+  function handleclick() {
+    console.log(item);
+  }
+  return (
+    <button className={classBtn} onClick={handleclick}>
+      {data}
+    </button>
+  );
 }
