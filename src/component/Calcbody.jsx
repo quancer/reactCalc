@@ -29,6 +29,7 @@ export default function Calcbody() {
   const [todoOp, setTodoOp] = useState("");
   const [dotBool, setdotBool] = useState("false");
   const [opBool, setopBool] = useState("false");
+  const [equalBool, setequalBool] = useState("false");
   function pressedBtn(val) {
     switch (val) {
       case "AC":
@@ -98,18 +99,12 @@ export default function Calcbody() {
     }
   }
   function changeTodoOp(val) {
-    if (opBool == "true") {
-      setTodoOp(val);
-      let sum = Number(prevScreen) + Number(currentSceen);
-      setPrevScreen(sum);
-      setCurrentSceen(sum);
-      // setCurrentSceen(0);
-    } else {
-      console.log("opclick");
+    if (opBool == "false") {
       setTodoOp(val);
       setPrevScreen(currentSceen);
-      // setCurrentSceen(0);
       setopBool("true");
+    } else {
+      setTodoOp(val);
     }
   }
   function equalHandler() {
@@ -134,6 +129,8 @@ export default function Calcbody() {
       // code block
     }
     setCurrentSceen(result);
+    setPrevScreen(result);
+    setequalBool("true");
   }
   return (
     <div className="calc">
