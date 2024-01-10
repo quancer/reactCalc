@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../style/btn.css";
 export default function Button(props) {
-  const { value, clickVal } = props;
+  const { value, pressedBtn } = props;
   // console.log(props, "value:", value, "click:", clickVal);
   let classBtn = "btn";
   if (value == "AC" || value == "+/-" || value == "%") {
@@ -25,7 +25,7 @@ export default function Button(props) {
       className={classBtn}
       onClick={() => {
         // console.log("btn=", value);
-        clickVal(value);
+        pressedBtn(value);
       }}
     >
       {value}
