@@ -1,9 +1,10 @@
 import "../style/header.css";
-export default function Header() {
+export default function Header({ value }) {
+  // console.log("screen:", value);
   return (
     <div className="head" id={"disp"}>
       <p className="headText" id={"headId"}>
-        0
+        {value}
       </p>
     </div>
   );

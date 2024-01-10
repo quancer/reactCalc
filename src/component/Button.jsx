@@ -1,23 +1,34 @@
 import { useState } from "react";
-export default function Button(probs) {
-  const { data } = probs;
-  const [item, setiD] = useState(0);
+import "../style/btn.css";
+export default function Button(props) {
+  const { value, clickVal } = props;
+  // console.log(props, "value:", value, "click:", clickVal);
   let classBtn = "btn";
-  if (data == "AC" || data == "+/-" || data == "%") {
+  if (value == "AC" || value == "+/-" || value == "%") {
     classBtn = "btn gray-bg";
   }
-  if (data == "+" || data == "-" || data == "/" || data == "*" || data == "=") {
+  if (
+    value == "+" ||
+    value == "-" ||
+    value == "/" ||
+    value == "*" ||
+    value == "="
+  ) {
     classBtn = "btn orange-bg";
   }
-  if (data == "0") {
+  if (value == "0") {
     classBtn = "btn lg";
   }
-  function handleclick() {
-    console.log(item);
-  }
   return (
-    <button className={classBtn} onClick={handleclick}>
-      {data}
+    // <button></button>
+    <button
+      className={classBtn}
+      onClick={() => {
+        // console.log("btn=", value);
+        clickVal(value);
+      }}
+    >
+      {value}
     </button>
   );
 }

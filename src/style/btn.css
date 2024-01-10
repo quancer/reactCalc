@@ -1,0 +1,43 @@
+.btn {
+  width: 70px;
+  height: 70px;
+  background: #333;
+  color: #fff;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  border-radius: 50%;
+  line-height: normal;
+  display: flex;
+  /* text-align: center; */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: none;
+  /* flex-grow: 1; */
+}
+.btn:active {
+  background-color: aqua;
+}
+
+.gray-bg {
+  background: #a5a5a5;
+  color: #000;
+}
+.orange-bg {
+  background-color: #f89b10;
+}
+.orange-bg:focus {
+  background-color: #ff8800;
+}
+.lg {
+  width: 100%;
+  border-radius: 35px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.act {
+  border: 2px solid black;
+}
