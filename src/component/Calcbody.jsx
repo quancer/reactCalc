@@ -77,7 +77,7 @@ export default function Calcbody() {
   }
   function procent() {
     // console.log(currentSceen / 100);
-    if (currentSceen < 100) {
+    if (currentSceen % 100 != 0) {
       setdotBool("true");
     }
     setCurrentSceen(currentSceen / 100);
@@ -123,7 +123,6 @@ export default function Calcbody() {
       case "/":
         result = Number(prevScreen) / Number(currentSceen) + "";
         break;
-
       default:
         changeScreen(val);
       // code block
@@ -139,7 +138,35 @@ export default function Calcbody() {
         {buttons.map((val, index) => {
           return <Button value={val} key={index} pressedBtn={pressedBtn} />;
         })}
+        {/* <Button value={"AC"} key={index} pressedBtn={pressedBtn} />
+        <Button value={"+/-"} key={index} pressedBtn={pressedBtn} />
+        <Button value={"%"} key={index} pressedBtn={pressedBtn} />
+        <Button value={"/"} key={index} pressedBtn={pressedBtn} />
+        <Button value={"-"} key={index} pressedBtn={pressedBtn} />
+        <Button value={"+"} key={index} pressedBtn={pressedBtn} />
+        <Button value={"8"} key={index} pressedBtn={pressedBtn} /> */}
       </div>
     </div>
   );
 }
+// const buttons = [
+//   "AC",
+//   "+/-",
+//   "%",
+//   "/",
+//   "7",
+//   "8",
+//   "9",
+//   "*",
+//   "4",
+//   "5",
+//   "6",
+//   "-",
+//   "1",
+//   "2",
+//   "3",
+//   "+",
+//   "0",
+//   ".",
+//   "=",
+// ];
